@@ -1,0 +1,14 @@
+# template_ons-js:
+#   filter: rjsmin
+#   output: ckanext-template_ons/%(version)s-template_ons.js
+#   contents:
+#     - js/template_ons.js
+#   extra:
+#     preload:
+#       - base/main
+
+# template_ons-css:
+#   filter: cssrewrite
+#   output: ckanext-template_ons/%(version)s-template_ons.css
+#   contents:
+#     - css/template_ons.css

@@ -29,8 +29,7 @@ this.ckan.module('autocomplete', function (jQuery) {
       tokensep: ',',
       interval: 300,
       dropdownClass: '',
-      containerClass: '',
-      minimumInputLength: 0
+      containerClass: ''
     },
 
     /* Sets up the module, binding methods, creating elements etc. Called
@@ -43,7 +42,7 @@ this.ckan.module('autocomplete', function (jQuery) {
       this.setupAutoComplete();
     },
 
-    /* Sets up the auto complete plugin. 
+    /* Sets up the auto complete plugin.
      *
      * Returns nothing.
      */
@@ -55,8 +54,7 @@ this.ckan.module('autocomplete', function (jQuery) {
         formatInputTooShort: this.formatInputTooShort,
         dropdownCssClass: this.options.dropdownClass,
         containerCssClass: this.options.containerClass,
-        tokenSeparators: this.options.tokensep.split(''),
-        minimumInputLength: this.options.minimumInputLength
+        tokenSeparators: this.options.tokensep.split('')
       };
 
       // Different keys are required depending on whether the select is
@@ -156,10 +154,10 @@ this.ckan.module('autocomplete', function (jQuery) {
       // Kills previous timeout
       clearTimeout(this._debounced);
 
-      if (!string) {
-        // Wipe the dropdown for empty calls.
-        fn({results:[]});
-      } else {
+      // OK, wipe the dropdown before we start ajaxing the completions
+      fn({results:[]});
+
+      if (string) {
         // Set a timer to prevent the search lookup occurring too often.
         this._debounced = setTimeout(function () {
           var term = module._lastTerm;
@@ -226,6 +224,12 @@ this.ckan.module('autocomplete', function (jQuery) {
       );
     },
 
+    /* Takes a string and converts it into an object used by the select2 plugin.
+     *
+     * term - The term to convert.
+     *
+     * Returns an object for use in select2.
+     */
     formatTerm: function (term) {
       term = jQuery.trim(term || '');
 

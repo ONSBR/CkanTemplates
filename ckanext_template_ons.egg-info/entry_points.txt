@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        template_ons = ckanext.template_ons.plugin:TemplateOnsPlugin
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    

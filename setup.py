@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
+from codecs import open  # To use a consistent encoding
+from os import path
 
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the relevant file
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
+    
 setup(
     name = "ckanext-template_ons",
     version = "0.0.1",
@@ -23,12 +31,12 @@ setup(
     keywords = 'CKAN ONS Template Dados Abertos',
     include_package_data=True,
     zip_safe=False,
-     entry_points="""
+     entry_points='''
         [ckan.plugins]
         template_ons = ckanext.template_ons.plugin:TemplateOnsPlugin
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
-    """,
+    ''',
     # If you are changing from the default layout of your extension, you may
     # have to change the message extractors, you can read more about babel
     # message extraction at

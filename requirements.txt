@@ -9,3 +9,10 @@ jinja2-time
 oauth2client
 wheel
 WebOb
+rsa
+uWSGI
+rq
+pbr
+PyJWT
+pybabel
+activate

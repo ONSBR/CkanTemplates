@@ -1,5 +1,5 @@
 include README.rst
 include LICENSE
 include requirements.txt
-recursive-include ckanext/template_ons *.html *.json *.js *.less *.css *.mo *.yml
-recursive-include ckanext/template_ons/migration *.ini *.py *.mako
+recursive-include ckanext/templateons *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/templateons/migration *.ini *.py *.mako

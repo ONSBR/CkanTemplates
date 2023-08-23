@@ -1,0 +1,11 @@
+uritemplate
+ckantoolkit>=0.0.7
+pika>=1.1.0
+pyOpenSSL>22.10
+requests>=2.11.1
+Flask
+Jinja2
+jinja2-time
+oauth2client
+wheel
+WebOb

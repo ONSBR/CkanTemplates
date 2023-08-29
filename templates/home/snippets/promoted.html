@@ -1,0 +1,27 @@
+{% set intro = g.site_intro_text %}
+
+<div class="module-content box">
+  <div>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Bem vindo ao ONS Dados Abertos") }}</h1>
+      <p>O <strong>Portal de Dados Abertos do ONS</strong> reúne dados históricos do setor elétrico brasileiro de maneira fácil e democrática. Lançado em agosto de 2021, em comemoração aos 23 anos do ONS, o Portal tem como principal objetivo facilitar, melhorar, democratizar o acesso e consumo desse tipo de conteúdo por todos os seus usuários e públicos. Trazendo diversos conjuntos de dados, o site garante disponibilidade de acesso, reuso e redistribuição e participação universal.</p>
+	  <p>Em linha com a estratégia de Operador de ser mais digital e transparente, o lançamento Portal representa um importante marco para que o ONS se torne uma organização cada vez mais orientada a dados e um centro de informações consolidadas e verificadas de valor para o setor e sociedade.</p>
+	  <p>Por ser uma plataforma de participação universal, o público-alvo do Portal abrange desde organizações comerciais ou governamentais até grupos de pessoas ou mesmo um indivíduo. O site reúne dados de interesse não apenas de agentes do setor elétrico, mas também de interesse da academia, de bancos de investimento, de pesquisadores e da imprensa.</p>
+	  <p>Atualmente, temos disponíveis os conjuntos de dados históricos:</p>
+    {% endif %}
+  </div>
+  {# Comentado Area de estatistica
+  {% block home_image %}
+    <section class="featured media-overlay hidden-xs">
+      <h2 class="media-heading">{% block home_image_caption %}{{ _("This is a featured section") }}{% endblock %}</h2>
+      {% block home_image_content %}
+        <!--a class="media-image" href="#">
+          <img class="img-responsive" src="{{ h.url_for_static('/base/images/placeholder-420x220.png') }}" alt="Placeholder" width="420" height="220" />
+        </a-->
+      {% endblock %}
+    </section>
+  {% endblock %}
+  #}
+</div>
